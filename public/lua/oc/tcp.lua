@@ -3,7 +3,8 @@ local JSON = require("json");
 local config = require('config');
 local conf = config.get(config.path);
 
-local handle = internet.open(conf.serverIP, tonumber(conf.tcpPort));
+-- local handle = internet.open(conf.serverIP, tonumber(conf.tcpPort)); I believe lua 5.3 breaks this in some way
+local handle = internet.open("127.0.0.1", 3001); -- hardcoded fix?
 handle:setvbuf('line');
 -- handle:setTimeout('10');
 
